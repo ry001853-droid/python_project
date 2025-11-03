@@ -1,3 +1,4 @@
+# write program using if-else and if-elif-else
 a = 15
 
 if a % 2 == 0:
