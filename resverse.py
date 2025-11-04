@@ -85,6 +85,10 @@ print("Product prices after applying discount:")
 for product, price in products.items():
   discounted_price = price - (price * discount_percentage / 100)
 print(f"{product.title()}: Original price = {price}, Discounted price = {discounted_price :. 2f}")
+
+
+
+
 ############################################ 8th practical ################################################
 # write a program to open,read, write and close text files using both traditional and 'with' statement methods
 
@@ -154,3 +158,4 @@ with open("data.pkl", "rb") as file:
  loaded_data = pickle.load(file)
 print("Data has been unpickled from 'data.pkl':")
 print(loaded_data)
+
