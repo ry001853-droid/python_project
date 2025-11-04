@@ -91,3 +91,93 @@ print("Random integer:", random_num)
 choices = ['Grapes', 'coconut', 'Apple', 'orange']
 random_choice = choice(choices)
 print("Random choice from list:", random_choice)
+
+
+#################################     6th practical     ######################
+
+# program to demonstrate list creation, slicing and nested lists
+
+# Creating a list of integers
+numbers = [11, 22, 33, 44, 55, 66]
+
+# Creating a nested list (list of list)
+matrix = [
+    [3, 6, 9],
+    [7, 1, 5],
+    [2, 3, 1]
+]
+
+# List slicing - Extracting elemnts from index 1 to 3
+slice_numbers = numbers[1:4]
+print("Sliced list (index 1 to 2):", slice_numbers)
+
+# Accessing elemnts in nested lists
+first_row = matrix[0]
+print("First row of matrix:", first_row)
+
+element_2_3 = matrix[1][2]
+print("Element at row 2, column 3:", element_2_3)
+
+# Modifying nested list element
+matrix[2][0] = 67
+print("Matrix after modification:")
+for row in matrix:
+    print(row)
+
+#################################################################3
+ 
+# List operations and methods such as append, remove and sort
+ 
+# Creating an initial list
+fruits = ["Apple", "watermelon", "pineapple"]
+
+# Append an item to the list
+fruits.append("Coconut")
+print("After append:", fruits)
+
+# Removing an item from the initial list
+fruits.remove("Apple")
+print("After removing:", fruits)
+
+# Sort the list in ascending order
+fruits.sort()
+print("After sort:", fruits)
+
+# Sort the list in descending order
+fruits.sort(reverse=True)
+print("After descending sort:", fruits)
+
+
+########################################################
+
+# Creating a program to explore tuples and their functions and tuple operations
+
+# Creating tuples
+tuple1 = (11, 22, 33, 44, 55, 66)
+tuple2 = ('guava', 'pineapple', 'Apple')
+tuple3 = (1, 2, (3, 4), 5, 6)
+
+# Accessing tuple elements by index
+print("Element at index 2 in tuple1:", tuple1[2])
+
+# Tuple slicing 
+print("Sliced tuple1 (index 1 to 3):", tuple[1:4])
+
+# Tuple concatenation
+concatenated = tuple1 + tuple2
+print("Concatenated tuple:", concatenated)
+
+# Tuple repetition
+repeated = tuple2 * 2
+print("Repeated tuple2:", repeated)
+
+# Tuple functions - count() and index()
+count_Apple = tuple2.count('Apple')
+index_guava = tuple2.index('guava')
+
+print("Count of 'Apple' in tuple2:", count_Apple)
+print("Index of 'guava' in tuple2:", index_guava)
+
+# Nested tuple access
+print("Accessing element in nested tuple3:", tuple3[2][1])
+
