@@ -1,127 +1,83 @@
-"""This program demonstrates comments and docstrings in Python."""
+############################################# 1st practical @#################################################
+a <- 12
+b <- 28
 
-def add(a, b):
-    """Return the sum of two numbers."""
-    # Add the numbers and store the result
-    result = a + b
-    return result  # Return the result
+sum <- a + b
+difference <- a - b
+product <- a * b
+quotient <- a / b
+powerab <- a ^ b
 
-# Main program
-x = 5  # First number
-y = 3  # Second number
-print("Sum =", add(x, y))  # Display the sum
+is_greater <- a > b
+is_equal <- a == b
 
-print("Hello world")
+cat("The sum of a and b is: ", sum, "\n")
+cat("The difference of a and b is: ", difference, "\n")
+cat("The product of a and b is: ", product, "\n")
+cat("The division of a and b is ", quotient, "\n")
+cat("The power of a and b is: ", powerab, "\n")
+cat("a > b ?: ", is_greater, "\n")
+cat("a = b ?: ", is_equal, "\n")
 
-########################################################## 9th practical ################################################
-########################################################## 9th practical ################################################
-########################################################## 9th practical ################################################
+################################################ 2nd practical ################################################
+############################################## 2nd practical ################################################
+############################################## 2nd practical ################################################
+# 1. VECTORS
+# Creating Vectors
+vector_a <- c(1, 2, 3, 4, 5) # Numeric Vector
+vector_b <- c("Apple", "Banana", "Mango") # Character Vector
+vector_c <- c(TRUE, FALSE, TRUE, FALSE) #Logical Vector
 
-# Write a program to demonstrate sequence and special characters in regular expressions.
+# Printing Vectors Using Cat
+cat("Numeric Vector:\n", vector_a, "\n")
+cat("Character Vector:\n", vector_b, "\n")
+cat("Logical Vector:\n", vector_c, "\n\n")
 
-import re
 
-# Sample text
-text = "My phone number is 123-456-7890 and my email is test.user@example.com."
+# 2. MATRIX
+# Creating A Matrix
+matrix_1 <- matrix(c(1,3,6,4), nrow = 2, ncol = 2, byrow = TRUE) #Filling rows first
+cat("Matrix: \n")
+print(matrix_1) # Using Print Here Because 'cat' Cannot Display A Matrix Directly
 
-# Sequence: \d matches any digit, \w matches any word character (letter, digit, or underscore)
-# Special characters: \s matches whitespace, . matches any character except newline
+# Accessing Elements In A Matrix
+element <- matrix_1[1,2] # Element In 1st Row And 2nd Column
+cat("Element at row 1, column 2: ", element, "\n\n")
 
-# Find all sequences of digits
-digits = re.findall(r"\d+", text)
-print("Digits found:", digits)
+# 3. ARRAYS
+# Creating A 3D Array
+array_1 <- array(1:24, dim = c(3, 4, 2)) # 3 Rows, 4 Column, 2 Layers
+cat("3D Array:\n")
+print(array_1) # Using Print For Array Visualization
 
-# Find email pattern using special characters
-email_pattern = r"\w+[\.\w]*@\w+\.\w+"
-emails = re.findall(email_pattern, text)
-print("Emails found:", emails)
+# Accessing An Element In The Array
+array_element <- array_1[2,3,1] # Element At 2nd Row, 3rd Column, 1st Layer
+cat("Element at row 2, column 3, layer 1:", array_element, "\n\n")
 
-# Find phone number pattern (sequence of digits with dashes)
-phone_pattern = r"\d{3}-\d{3}-\d{4}"
-phones = re.findall(phone_pattern, text)
-print("Phone numbers found:", phones)
+# 4. LISTS
+# Creating A List
+my_list <- list(Name = 'Harsh', Age = 18, Scores = c(90, 88, 85))
+cat("List:\n")
+print(my_list) # Using Print For Better List Visualization
 
-# Use special characters: ^ matches start of string, $ matches end of string
-start_check = re.match(r"^My", text)
-end_check = re.search(r"com\.$", text)
+cat("Name from the list:", my_list$Name, "\n")
+cat("Scores from the list: \n", my_list$Scores, "\n\n")
+cat("Age from the list: \n", my_list$Age, "\n\n")
+    
+# 5. DATA FRAMES
+# Creating A Data Frame
+students <- data.frame(
+  Name = c("Krish", "Riddhi", "Rishi"),
+  Age =c(18, 17, 17),
+  Marks = c(85, 90, 88)
+)
+      
+cat("Data Frame:\n")
+print(students) #Using Print For Better Data Frame Visualization
+      
+# Accessing Elements In A Data Frame
+cat("Names of students:\n", students$Name, "\n")
+cat("First row of the data frame: \n")
+print(students[1, ]) # Printing the first row
+cat("Marks of Riddhi:", students [students$Name == "Riddhi", "Marks"], "\n")
 
-print("Starts with 'My':", bool(start_check))
-print("Ends with 'com.':", bool(end_check))
-
-########################################################################################
-
-# Implement a program to use regular expressions for searching and extracting data from text files.
-
-import re
-
-# Create a sample text file for demonstration
-sample_text = """John's email is john. doe@example.com and his phone number is 123-456-7890.
-Contact Jane at jane_smith123@mail.net or call 987-654-3210."""
-
-with open("sample_data.txt", "w") as file:
- file.write(sample_text)
-
-# Define regex patterns for email and phone number
-email_pattern = r"\b[\w.-]+@[\w .-]+\.\w+\b"
-phone_pattern = r"\b\d{3}-\d{3}-\d{4}\b"
-
-# Open and read the file, then search for patterns
-with open("sample_data.txt", "r") as file:
- content = file.read()
-
-emails = re.findall(email_pattern, content)
-phones = re.findall(phone_pattern, content)
-
-print("Emails found in file:")
-for email in emails:
- print(email)
-
-print("\nPhone numbers found in file:")
-for phone in phones:
- print(phone)
-
-#############################################################################
-
-#   
-
-import re
-
-# Sample HTML content for demonstration
-html_content = """
-<html>
-<head><title>Sample Page</title></head>
-<body>
-<h1>Welcome to My Website</h1>
-<p class="intro">This is a sample HTML file .< /p>
-<a href="https://example.com/page1">Page 1</a>
-<a href="https://example.com/page2">Page 2</a>
-<p>Contact us at contact@example.com</p>
-</body>
-</html>
-"""
-
-# Extract the title of the page
-title_match = re.search(r"<title>(.*?)</title>", html_content, re.IGNORECASE)
-title = title_match.group(1) if title_match else "No title found"
-
-# Extract all links (href attribute values)
-links = re.findall(r'href="(.*?)"', html_content)
-
-# Extract all paragraph texts
-paragraphs = re.findall(r"<p.*?>(.*?)</p>", html_content, re.DOTALL)
-
-# Extract email addresses
-emails = re.findall(r"[a-zA-Z0-9._ %+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}", html_content)
-
-print("Page Title:", title)
-print("\nLinks found:")
-for link in links:
- print(link)
-
-print("\nParagraphs found:")
-for para in paragraphs:
- print(para.strip())
-
-print("\nEmails found:")
-for email in emails:
- print(email)
