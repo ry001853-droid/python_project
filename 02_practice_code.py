@@ -1,149 +1,98 @@
-# 1st practical
+##################################################### 3rd practical ##################################
+# 1. String Concatenation
+string1<- "Hello"
+string2<- "World"
+# Concatenating strings with a space
+result_concat <- paste(stringl, string2)
+cat("Concatenated String:\n", result_concat, "\n\n")
 
-"""This program demonstrates comments and docstrings in python"""
+# 2. Substring Extraction
+# Extract characters from 2nd to 4th position in a string
+substring_result <- substr(string1, 2, 4)
+cat("Substring from 'Hello' (2nd to 4th position):\n", substring_result, "\n\n")
 
-def add(a, b):
-    """ this adds two numbers"""
-    # result
-    result = a + b
-    return result # This returns the result 
+# 3. Changing Case
+uppercase <- toupper(stringl) # Convert to uppercase
+lowercase <- tolower(string2)
+cat("Uppercase:\n", uppercase, "\nLowercase:\n", lowercase, "\n\n")
 
-# Main program
-x = 60
-y = 7
-print("sum =", add(x, y))
+# 4. String Length
+length_stringl <- nchar(string1)
+length_string2 <- nchar(string2)
+cat("Length of 'Hello':", length_string1, "\n")
+cat("Length of 'World':", length_string2, "\n\n")
 
+# 5. String Replacement
+text <- "R is a great programming language"
+replaced_text <- sub("great", "fantastic", text) # Replace the first occurrence
+cat("Original Text:\n", text, "\n")
+cat("After Replacement:\n", replaced_text, "\n\n")
 
-print("Hello world")
+# 6. Splitting Strings
+sentence <- "R is powerful for data science"
+split_result <- strsplit(sentence, " ") # Split by space
+cat("Splitting the sentence into words:\n")
+print(split_result)
 
-# 2nd practical
+# 7. Joining Strings from a Vector
+words <- c("Data", "Science", "is", "fun")
+joined_string <- paste(words, collapse ="-")
+cat("\nJoined String:\n", joined_string, "\n\n")
 
-# Demonstrating the different types of data types in python
+# 8. Detecting Patterns
+pattern <- "data"
+is_present <- grepl(pattern, sentence, ignore.case = TRUE) # Case-insensitive search
+cat("Is 'data' present in the sentence ?: ", is_present, "\n\n")
 
-# Integer
-Age = 19
-print("Integer :", Age)
+# 9. Finding and Replacing Patterns
+pattern_replacement <- gsub("data", "information", sentence, ignore.case = TRUE)
+cat("After Pattern Replacement:\n", pattern_replacement, "\n\n")
 
-# Float 
-Height = 5.7
-print("Float :", Height)
+# 10. Trimming whites paces
+string_with_spaces <- " Trim me "
+trimmed_string <- trimws(string_with_spaces)
+cat("Original String with spaces:\n'", string_with_spaces, "'\n", sep = "")
+cat("Trimmed String:\n'", trimmed_string, "'\n", sep = "")
 
-# String
-Name = "zoro"
-print("String :", Name)
-
-# List
-Marks = [99, 99 , 99]
-print("List :", Marks)
-
-# Tuple 
-Radii = (6.6, 6.7, 6.8)
-print("Tuple :", Radii)
-
-# Dictionaries 
-Profile_info = { "Name ": "zoro", "Age ": 19, "Height ": 5.7, "Marks": Marks}
-print("Dictionaries :", Profile_info)
-
-# Set
-Swords = {"Wado ichimonji", "Sandai Kitetsu", "Yubashiri"}
-print("Set :", Swords)
-
-# This program takes input from user and displays the output
-Name = input("Enter your name :")
-Age = int(input("Enter your age :"))
-
-# Displys the output
-print("Hello", Name)
-print("You are", Age ,"years old")
-
-
-######################################################## 10th practical ######################################
-######################################################## 10th practical ######################################
-######################################################## 10th practical ######################################
-
-# Write a program to display the current date and time, and format them in different ways.
-
-from datetime import datetime
-
-# Get current date and time
-now = datetime.now()
-
-# Default string representation
-print("Current date and time:", now)
-
-# Custom formats
-print("Formatted date (DD-MM-YYYY):", now.strftime("%d-%m-%Y"))
-print("Formatted date (Month day, Year):", now.strftime("%B %d, %Y"))
-print("Formatted time (24-hour):", now.strftime("%H:%M:%S"))
-print("Formatted time (12-hour with AM/PM):", now.strftime("%I:%M:%S %p"))
-print("ISO 8601 format:", now.isoformat())
-
-##################################################################################################
-
-# 2. Implement a program to find and compare dates, and sort a list of dates.
-
-from datetime import datetime
-
-# Sample dates as strings
-date_strings = [
-"2025-12-25",
-"2024-01-01",
-"2025-06-15",
-"2023-09-27",
-"2025-01-01"
-]
-
-# Convert strings to datetime objects
-dates = [datetime. strptime(date_str, "%Y-%m-%d") for date_str in date_strings]
-
-# Comparing two dates
-date1 = dates[0]
-date2 = dates[1]
-
-if date1 > date2:
- print(f"{date1.date()} is after {date2.date()}")
-elif date1 < date2:
- print(f"{date1.date()} is before {date2.date()}")
-else:
- print(f"{date1.date()} is the same as {date2.date()}")
-
-# Sorting the list of dates
-sorted_dates = sorted(dates)
-print("\nDates sorted in ascending order:")
-for date in sorted_dates:
- print(date.strftime("%Y-%m-%d"))
+########################################### 4th practical ################################################
+########################################### 4th practical ################################################
+########################################### 4th practical ################################################
 
 
-####################################################################################
+# Sample data
+data <- c(12, 15, 20, 22, 18, 15, 15, 17, 19, 22, 24)
 
-# 3. Demonstrate the use of calendar module to perform operations such as printing calendars and finding specific dates.
+# 1. Mean
+mean_value <- mean(data)
+cat("Mean of the data:\n", mean_value, "\n\n")
 
-import calendar
+# 2. Median
+median_value <- median(data)
+cat("Median of the data:\n", median_value, "\n\n")
 
-# Print the calendar for a specific month and year
-year = 2025
-month = 9
-print(f"Calendar for {calendar.month_name[month]} {year}:")
-print(calendar.month(year, month))
+# 3. Mode
+# Defining a custom function to calculate mode
+calculate_mode <- function(x) {
+  freq_table <- table(x) # Frequency of each value
+  mode_values <- as.numeric(names(freq_table[freq_table == max(freq_table)]))
+  return(mode_values)
+}
+  
+  mode_value <- calculate_mode(data)
+  cat("Mode of the data:\n", mode_value, "\n\n")
+  
+  # 4. Variance
+  variance_value <- var(data)
+  cat("Variance of the data:\n", variance_value, "\n\n")
+  
+  # 5. Standard Deviation
+  std_dev_value <- sd(data)
+  cat("Standard Deviation of the data:\n", std_dev_value, "\n\n")
+  
+  # 6. Summary of data (Optional)
+  cat("Summary of the data: \n")
+  print (summary(data))
 
-# Print the calendar for the whole year
-print(f"Calendar for the year {year}:")
-print(calendar.calendar(year))
-
-# Find the weekday of a specific date
-day = 26
-weekday = calendar.weekday(year, month, day)
-print(f"Weekday for {year}-{month}-{day} is:", calendar.day_name[weekday])
-
-# Check if a year is a leap year
-is_leap = calendar.isleap(year)
-print(f"Is {year} a leap year? {is_leap}")
-
-# Get the number of leap years in a range
-start_year = 2000
-end_year = 2025
-leap_years_count = calendar. leapdays(start_year, end_year)
-print(f"Number of leap years between {start_year} and {end_year}: {leap_years_count}")
 
 
 
